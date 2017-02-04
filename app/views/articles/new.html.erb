@@ -4,38 +4,42 @@
 	<%= stylesheet_link_tag "articles.scss" %>
     <form method="get" action="/">
     <button class="submit" type="submit">Atras</button>
-    </form>  
+    </form>
     <meta charset="utf-8">
 </head>
 <body>
-
 	<center><form class="contact_form" action="/articles" method="post" name="contact_form">
-	<ul>
+		<ul>
 		<li>
-         <h2>Agregar Libro</h2>
-    </li>
-    <li>
-	<%= form_for(@article) do |f| %>
-	<li>
-	<label for="nombre">Nombre:</label>
-	<div class ="field">
-		<%= f.text_field :nombre,placeholder: "Nombre" %>
-	</div>
+			<h2>Agregar Libro</h2>
+		</li>
+		<%= form_for(@article) do |f| %>
+		<% @article.errors.full_messages.each do |message| %>
+		<div class="be-red white">
+			* <%= message%>
+		</div>
+		<%end%>
+		<li>
+			<label for="nombre">Nombre:</label>
+			<div class ="field">
+				<%= f.text_field :nombre, placeholder: "Nombre" %>
+			</div>
+		</li>
+		<li>
+			<label for="isbn">ISBN:</label>
+			<div class ="field">
+				<%= f.text_field :isbn, placeholder: "12345678" %>
+			</div>
+		</li>
+		<div>
+			<li> 
+				<%= button_tag(type: 'submit', class: "submit") do %>Agregar
+				<% end %>
+			</li>
+		</div>
+		<%end%>
 	</li>
-	<li>
-	<label for="isbn">ISBN:</label>
-	<div class ="field">
-		<%= f.text_field :isbn,placeholder: "12345678" %>
-	</div>
-</li>
-	<li> 
-		<%= button_tag(type: 'submit', class: "submit") do %>Agregar
-	<% end %>
-	</li>
-<%end%>
-
 </ul>
-    </li>
 </form></center>
 </body>
 </html>

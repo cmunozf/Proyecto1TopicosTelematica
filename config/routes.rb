@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
  resources :articles
- resources :eliminar_libro
- resources :ver_libros
 
   root 'welcome#index'
 
