@@ -67,6 +67,8 @@ git clone https://github.com/cmunozf/Proyecto1TopicosTelematica.git
 cd Proyecto1TopicosTelematica
 
 bundle update
+
+rails db:migrate
 ___________________________________________________________________________________
 
 4-
