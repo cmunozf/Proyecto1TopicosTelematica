@@ -22,9 +22,4 @@ ActiveRecord::Schema.define(version: 20170204185434) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "usuarios", force: :cascade do |t|
-    t.string "nombre"
-    t.string "isbn"
-  end
-
 end
