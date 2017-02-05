@@ -9,7 +9,11 @@ class ArticlesController < ApplicationController
   end 
 
   def create
-  	@article = Article.new(nombre: params[:article][:nombre], isbn: params[:article][:isbn])
+  	@article = Article.new(nombre: params[:article][:nombre], 
+      isbn: params[:article][:isbn],
+      autor: params[:article][:autor],
+      fecha: params[:article][:fecha],
+      editorial: params[:article][:editorial])
 
   	if @article.save
       redirect_to  "/articles"

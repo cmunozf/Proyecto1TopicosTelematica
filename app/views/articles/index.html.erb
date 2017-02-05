@@ -18,7 +18,16 @@
 							<h1><%= article.nombre %></h1>
 						</div>		
 						<div>
-							<%= article.isbn %>
+							Isbn: <%= article.isbn %>
+						</div>
+						<div>
+							Autor: <%= article.autor %>
+						</div>
+						<div>
+							Fecha Publicacion: <%= article.fecha %>
+						</div>
+						<div>
+							Editorial: <%= article.editorial %>
 						</div>
 						<div align="right">
 							<%= button_to "X", article, method: :delete , :class => 'red'%>	

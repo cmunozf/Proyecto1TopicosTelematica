@@ -15,6 +15,9 @@ ActiveRecord::Schema.define(version: 20170204185434) do
   create_table "articles", force: :cascade do |t|
     t.string   "nombre"
     t.string   "isbn"
+    t.string   "autor"
+    t.string   "fecha"
+    t.string   "editorial"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
