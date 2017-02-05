@@ -1,0 +1,36 @@
+<html>
+<head>
+    <%= stylesheet_link_tag "articles.scss" %>
+    <form method="get" action="/">
+    <button class="submit" type="submit">Atras</button>
+    <center><h1>Libros</h1></center>
+    </form>
+    <meta charset="utf-8">
+</head>
+<body>
+	<div class="contact_form1">
+	<ul>
+			<li>
+				<div>
+					<% @articles.each do |article|%>
+					<li>
+						<div>
+							<h1><%= article.nombre %></h1>
+						</div>		
+						<div>
+							<%= article.isbn %>
+						</div>
+						<div align="right">
+							<%= button_to "X", article, method: :delete , :class => 'red'%>	
+						</div>
+					</li>
+
+					<%end%>
+				</div>
+			</li>
+		</ul>
+</div>	
+</body>
+</html>
+
+

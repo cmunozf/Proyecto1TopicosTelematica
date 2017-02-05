@@ -1,5 +1,4 @@
 class ArticlesController < ApplicationController
-	protect_from_forgery
 
   def index 
   	@articles = Article.all  	
@@ -9,26 +8,27 @@ class ArticlesController < ApplicationController
   	@article = Article.new
   end 
 
-  def show
-  	@articles = Article.all 	
-  end
-
   def create
   	@article = Article.new(nombre: params[:article][:nombre], isbn: params[:article][:isbn])
 
   	if @article.save
-      redirect_to  @article
+      redirect_to  "/articles"
     else
       render :new;
     end
 
   end
 
-  def delete
-    
+  def show
+    @article = Article.find(params[:id]) 
   end
 
-  def update
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to "/articles"
   end
+
+
  
 end
